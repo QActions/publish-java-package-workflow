@@ -16,7 +16,7 @@ on:
 
 jobs:
   build:
-    uses: QActions/publish-java-package-workflow/.github/workflows/buildAndPublish.yaml@1.0.0
+    uses: QActions/publish-java-package-workflow/.github/workflows/buildAndPublish.yaml@1.1.0
     secrets:
       GH_PACKAGES_FULL_READ_ACCESS_TOKEN: ${{ secrets.GH_PACKAGES_FULL_READ_ACCESS_TOKEN }}
 ```
@@ -35,7 +35,7 @@ on:
 
 jobs:
   build:
-    uses: QActions/publish-java-package-workflow/.github/workflows/build.yaml@1.0.0
+    uses: QActions/publish-java-package-workflow/.github/workflows/build.yaml@1.1.0
     secrets:
       GH_PACKAGES_FULL_READ_ACCESS_TOKEN: ${{ secrets.GH_PACKAGES_FULL_READ_ACCESS_TOKEN }}
 ```
