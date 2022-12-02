@@ -19,10 +19,14 @@ jobs:
       - name: Set the correct version of the package
         run: |
           project_version=`node -p "require('./documentation/project_info.json').version"`
-          
+
           if [ "$GITHUB_REF" == "refs/heads/master" ]
           then
             version="$project_version"
+
+            # Tag the commit with the correct version
+            git tag $version
+            git push origin $version
           else
             short_commit_hash=${GITHUB_SHA:0:7}
             version="$project_version-alpha.$GITHUB_RUN_NUMBER.$short_commit_hash"
